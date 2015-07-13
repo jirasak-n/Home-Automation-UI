@@ -1,0 +1,39 @@
+<ion-item class="device-item device-onoff-height">
+
+    <!-- REACHABLE BADGE -->
+    <div class="reachable-icon" ng-if="!device.status._reachable">
+        <span class="badge badge-assertive"><i class="ion-alert"></i></span>
+    </div>
+
+    <div class="flex justify-content-center align-items-center device-onoff-height">
+        <!-- ICON -->
+        <div class="device-icon-position pointer">
+            <span ng-click="openSettingsModal()" class="icon-devices-size" ng-class="renderClass"></span>
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div class="device-desc-position">
+            <p class="device-name">{{::device.name}}</p>
+            <p class="device-desc">{{::device.description}}</p>
+            <p class="energy-desc" ng-if="::device.capabilities.energyMeter">
+                <i class="ion-speedometer"></i>&nbsp;&nbsp;
+                <span>{{device.status._power}}</span> W /&nbsp;
+                <span>{{device.status._voltage}}</span> V /&nbsp;
+                <span>{{device.status._current}}</span> A /&nbsp;
+                <span>{{device.status._energy}}</span> kWh
+            </p>
+        </div>
+
+        <!-- TOGGLE -->
+        <div class="device-toggle-position">
+            <label class="toggle toggle-positive">
+                <input type="checkbox" ng-model="deviceData.status.isOn">
+                <div class="track">
+                    <div class="handle"></div>
+                </div>
+            </label>
+        </div>
+    </div>
+
+</ion-item>
+

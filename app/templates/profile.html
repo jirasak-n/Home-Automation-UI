@@ -1,0 +1,44 @@
+<ion-view view-title="My Profile">
+
+    <div class="bar bar-subheader bar-positive profile-subheader-height">
+        <div class="profile-subheader-height flex align-items-center justify-content-center flex-direction-column">
+            <div class="profile-background-image" style="background: url({{profilePictureUrl}}) no-repeat"></div>
+        </div>
+    </div>
+
+    <ion-content class="zero-padding profile-ion-content">
+
+        <div class="flex align-items-center">
+            <div class="auto-flex-column flex">
+                <div class="flex align-items-center justify-content-center profile-flex-column-2fields">
+                    <span style="font-size: 24px" class="profile-icon"><i class="ion-ios-person"></i></span>
+                    <span class="auto-flex-column profile-text">{{firstName}}</span>
+                </div>
+                <div class="profile-flex-column-line"></div>
+                <div class="profile-flex-column-2fields">
+                    <span class="auto-flex-column profile-text">{{lastName}}</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="flex align-items-center">
+            <div class="auto-flex-column flex align-items-center justify-content-center profile-flex-column">
+                <span style="font-size: 22px" class="profile-icon"><i class="{{genderIcon}}"></i></span>
+                <span class="auto-flex-column profile-text">{{gender}}</span>
+            </div>
+        </div>
+
+    </ion-content>
+
+    <!--<div class="tabs tabs-modal">-->
+        <!--<div class="button-bar">-->
+            <!--<a class="button button-full button-assertive flex align-items-center" ng-click="logout()">-->
+                <!--<div>-->
+                    <!--<i class="ion-log-out tab-button-icon"></i>&nbsp;-->
+                    <!--<span>Sign out</span>-->
+                <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
+
+</ion-view>

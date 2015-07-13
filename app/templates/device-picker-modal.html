@@ -1,0 +1,57 @@
+<ion-modal-view class="ion-modal-view" id="add-devices">
+
+    <div class="bar bar-header bar-positive">
+        <h1 class="title"> Add Devices</h1>
+    </div>
+
+    <ion-content padding="true" class="modal-ion-content has-header">
+
+        <div ng-repeat="deviceType in groupDevices.data" ng-if="!devicesFiltered.length && deviceType.type!='TemperatureSensor'">
+            <!-- show name of device type -->
+            <div class="item item-divider" ng-show="devicesFiltered.length>1">{{ ::deviceType.pluralTypeName }}</div>
+            <div class="item item-divider" ng-show="devicesFiltered.length==1">{{ ::deviceType.typeName }}</div>
+
+            <div class="list" style="padding-bottom: 0px">
+                <label class="item item-radio" ng-repeat="device in devicesFiltered = (deviceType.devices | filter: {isNew:false} | filter: notAddedDevice)" ng-class="{'item-selected':(temp.selectedDevices[device.$id])}">
+
+                        <input type="checkbox" ng-model="temp.selectedDevices[device.$id]">
+
+                        <div class="flex justify-content-center align-items-center icon-picker-height">
+                            <!-- ICON -->
+                            <div class="device-icon-position">
+                                <span class="add-devices-icon" ng-class="icons[devicesAppData[device.$id].uiOptions.iconOnId].icon"></span>
+                            </div>
+
+                            <!-- DESCRIPTION -->
+                            <div class="device-desc-position" style="margin-top: 4px">
+                                <p class="device-name">{{::device.name}}</p>
+                                <p class="device-desc" style="margin-top: -3px">{{::device.description}}</p>
+                            </div>
+                        </div>
+
+                        <i class="radio-icon ion-checkmark"></i>
+
+                </label>
+            </div>
+
+        </div>
+
+        <div style="padding-top: 48px"></div>
+
+    </ion-content>
+
+    <div class="tabs tabs-modal">
+        <div class="button-bar">
+            <a class="button button-full button-positive"
+               ng-click="closeDevicePickerModal()">
+                <i class="ion-ios-close-outline tab-button-icon"></i>&nbsp;
+                <span>Close</span>
+            </a>
+            <a class="button button-full button-balanced" ng-click="closeDevicePickerModal(true)">
+                <i class="ion-ios-plus-outline tab-button-icon"></i>&nbsp;
+                <span>Add</span>
+            </a>
+        </div>
+    </div>
+
+</ion-modal-view>

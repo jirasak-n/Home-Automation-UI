@@ -1,0 +1,45 @@
+<ion-view view-title="Devices Management" id="manage-devices">
+
+    <ion-nav-buttons side="right">
+
+        <button class="button button-clear scan-device" ng-click="scanConfirm()"
+                ng-if="!gateway.permitJoining">
+            <i class="ion-android-locate"
+               style="font-size: 27px; color: #fff; -webkit-font-smoothing:antialiased; -webkit-text-stroke-color: #29AAE3; -webkit-text-stroke-width: 0.8px"></i>
+        </button>
+
+        <span class="scan-device" ng-if="gateway.permitJoining" style="position:absolute;top:5px;right:4px;font-size: 15px">
+            <ion-spinner icon="ripple"></ion-spinner>
+        </span>
+
+    </ion-nav-buttons>
+
+    <ion-content class="zero-padding">
+
+        <div ng-repeat="deviceType in groupDevices.data" ng-hide="devicesFiltered.length==0">
+            <!-- show name of device type -->
+            <div class="item item-divider" ng-hide="devicesFiltered.length==1">{{ ::deviceType.pluralTypeName }} (new)</div>
+            <div class="item item-divider" ng-show="devicesFiltered.length==1">{{ ::deviceType.typeName }} (new)</div>
+
+            <ion-list>
+                <div ng-repeat="device in (devicesFiltered = (deviceType.devices | filter: {isNew:true}))">
+                    <div switch-device device-id="{{::device.$id}}" directive-name="{{::deviceType.managementDirectiveName}}" class="switch-new-devices-div"></div>
+        </div>
+        </ion-list>
+        </div>
+
+        <div ng-repeat="deviceType in groupDevices.data" ng-hide="devicesFiltered.length==0">
+            <!-- show name of device type -->
+            <div class="item item-divider" ng-hide="devicesFiltered.length==1">{{ ::deviceType.pluralTypeName }}</div>
+            <div class="item item-divider" ng-show="devicesFiltered.length==1">{{ ::deviceType.typeName }}</div>
+
+            <ion-list>
+                <div ng-repeat="device in (devicesFiltered = (deviceType.devices | filter: {isNew:false}))">
+                    <div switch-device device-id="{{::device.$id}}" directive-name="{{::deviceType.managementDirectiveName}}"></div>
+                </div>
+            </ion-list>
+        </div>
+
+    </ion-content>
+
+</ion-view>

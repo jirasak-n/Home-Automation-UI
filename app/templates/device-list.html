@@ -1,0 +1,17 @@
+<ion-view view-title="Devices" id="devices-list">
+
+    <ion-content class="zero-padding">
+        <div ng-repeat="deviceType in groupDevice.data" ng-hide="devicesFiltered.length==0">
+            <!-- show name of device type -->
+            <div class="item item-divider" ng-hide="devicesFiltered.length==1">{{ ::deviceType.pluralTypeName }}</div>
+            <div class="item item-divider" ng-show="devicesFiltered.length==1">{{ ::deviceType.typeName }}</div>
+
+            <ion-list>
+                <div ng-repeat="device in (devicesFiltered = (deviceType.devices | filter: {isNew:false}))">
+                    <div switch-device device-id="{{::device.$id}}" directive-name="{{::deviceType.directiveName}}"></div>
+                </div>
+            </ion-list>
+
+        </div>
+    </ion-content>
+</ion-view>

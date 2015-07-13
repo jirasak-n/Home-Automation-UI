@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/ionic/release/css/ionic.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <link rel="shortcut icon" href="images/UbinxtFavicon.png" type="image/x-icon">
+    <link href="styles/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/flaticon.css">
+
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="styles/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/ionic/release/js/ionic.js"></script>
+    <script src="bower_components/ionic/release/js/ionic-angular.js"></script>
+    <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="bower_components/angular-ui-router.stateHelper/statehelper.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <!-- build:js scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/configuration.js"></script>
+    <script src="scripts/controllers/init-controller.js"></script>
+    <script src="scripts/controllers/authentication-controller.js"></script>
+    <script src="scripts/controllers/main-menu-controller.js"></script>
+    <script src="scripts/controllers/device-list-controller.js"></script>
+    <script src="scripts/controllers/scenes-recall-controller.js"></script>
+    <script src="scripts/controllers/manage-devices-controller.js"></script>
+    <script src="scripts/controllers/manage-device-detail-controller.js"></script>
+    <script src="scripts/controllers/scenes-setting-controller.js"></script>
+    <script src="scripts/controllers/create-scene-controller.js"></script>
+    <script src="scripts/controllers/profile-controller.js"></script>
+
+    <script src="scripts/services/device-types.js"></script>
+    <script src="scripts/services/icons.js"></script>
+    <script src="scripts/services/firebase-config.js"></script>
+    <script src="scripts/services/firebase-ref.js"></script>
+    <script src="scripts/services/devices.js"></script>
+    <script src="scripts/services/devices-app-data.js"></script>
+    <script src="scripts/services/group-devices.js"></script>
+    <script src="scripts/services/scenes.js"></script>
+    <script src="scripts/services/scenes-app-data.js"></script>
+    <script src="scripts/services/gateway.js"></script>
+    <script src="scripts/services/local-storage.js"></script>
+    <script src="scripts/services/firebase_auth.js"></script>
+    <script src="scripts/services/user-config.js"></script>
+    <script src="scripts/services/wait-for-data.js"></script>
+
+    <script src="scripts/directives/switch-device.js"></script>
+    <script src="scripts/directives/stop-event.js"></script>
+    <script src="scripts/directives/mains-power-outlet.js"></script>
+    <script src="scripts/directives/extended-color-light.js"></script>
+    <script src="scripts/directives/door-lock.js"></script>
+    <script src="scripts/directives/temperature-sensor.js"></script>
+    <script src="scripts/directives/dimmable-light.js"></script>
+    <script src="scripts/directives/management-mains-power-outlet.js"></script>
+    <script src="scripts/directives/management-door-lock.js"></script>
+    <script src="scripts/directives/management-extended-color-light.js"></script>
+    <script src="scripts/directives/management-temperature-sensor.js"></script>
+    <script src="scripts/directives/management-dimmable-light.js"></script>
+    <script src="scripts/directives/scene-mains-power-outlet.js"></script>
+    <script src="scripts/directives/scene-door-lock.js"></script>
+    <script src="scripts/directives/scene-extended-color-light.js"></script>
+    <script src="scripts/directives/scene-dimmable-light.js"></script>
+    <!-- endbuild -->
+</head>
+
+<body ng-app="smartHome">
+    <ion-nav-view animation="slide-left-right">
+    </ion-nav-view>
+</body>
+</html>

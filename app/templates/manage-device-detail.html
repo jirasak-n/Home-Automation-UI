@@ -1,0 +1,88 @@
+<ion-view view-title="{{title}}" id="manage-device-detail">
+
+    <ion-content class="zero-padding light-bg">
+
+        <div class="flex justify-content-center align-items-center light-bg device-dim-height">
+
+            <!-- SHOW DEVICE != DoorLock -->
+            <a class="device-scene-icon-position" ng-click="openIconPickerModal()" ng-if="device.deviceType!='DoorLock'">
+                <p class="logo-font" ng-if="!temp.iconId">+ Logo</p>
+
+                <span class="icon-devices-size positive pointer" ng-class="icons[temp.iconId].icon" ng-if="temp.iconId"></span>
+            </a>
+
+            <!-- DOOR ICON -->
+            <a class="device-scene-icon-position" ng-if="device.deviceType=='DoorLock'">
+                <p class="logo-font" ng-if="!temp.iconId">+ Logo</p>
+
+                <span class="icon-devices-size flaticon-closed42 positive" ng-if="temp.iconId"></span>
+            </a>
+
+            <div class="scene-line"></div>
+
+            <div class="auto-flex-column">
+                <label class="item item-input scene-input">
+                    <input type="text" placeholder="Name" name="name" ng-model="temp.name" class="scene-name">
+                </label>
+                <label class="item item-input scene-input">
+                    <input type="text" placeholder="Description" name="desc" ng-model="temp.description" class="scene-desc">
+                </label>
+            </div>
+
+        </div>
+
+        <div class="item item-divider" style="margin-bottom: 10px">Device Information</div>
+
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">Device Type</span>
+                <span class="input-detail">{{::device.deviceType}}</span>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Manufacturer</span>
+                <span class="input-detail">{{::device.manufacturer}}</span>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Model</span>
+                <span class="input-detail">{{::device.model}}</span>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">IEEE Address</span>
+                <span class="input-detail">{{::device.ieeeAddress}}</span>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">End Point</span>
+                <span class="input-detail">{{::device.epId}}</span>
+            </label>
+        </div>
+
+        <div style="padding-top: 40px"></div>
+
+    </ion-content>
+
+    <div class="tabs tabs-modal">
+        <div class="button-bar">
+            <a class="button button-full button-assertive" ng-click="deleteConfirm(device)">
+                <div ng-if="!confirmDelete">
+                    <i class="ion-ios-minus-outline tab-button-icon"></i>&nbsp;
+                    <span>Delete</span>
+                </div>
+                <div ng-if="confirmDelete" class="spinner-in-button-div">
+                    <ion-spinner icon="spiral"></ion-spinner>
+                    <span>Deleting..</span>
+                </div>
+            </a>
+            <a class="button button-full button-balanced" ng-click="save()">
+                <div ng-if="!disableSaveButton">
+                    <i class="ion-ios-checkmark-outline tab-button-icon"></i>&nbsp;
+                    <span>Done</span>
+                </div>
+                <div ng-if="disableSaveButton" class="spinner-in-button-div">
+                    <ion-spinner icon="spiral"></ion-spinner>
+                    <span>Saving..</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</ion-view>

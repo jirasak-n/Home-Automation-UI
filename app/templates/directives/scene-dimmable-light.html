@@ -1,0 +1,56 @@
+<ion-item class="device-item device-dim-height">
+
+    <!-- REACHABLE BADGE -->
+    <div class="reachable-icon" ng-if="!device.status._reachable">
+        <span class="badge badge-assertive"><i class="ion-alert"></i></span>
+    </div>
+
+    <!-- RANGE BG OPACITY -->
+    <div ng-class="{'range-change':levelChanging}"></div>
+
+    <!-- BRIGHTNESS VALUE -->
+    <div class="range-level-font2" ng-if="levelChanging">
+        {{deviceData.status.brightness}}
+    </div>
+
+    <!-- RANGE INPUT -->
+    <!--<div style="position:absolute; bottom:-8px; left:70px; right:80px; width:auto; text-align:left; z-index: 2">-->
+        <!--<div class="range range-positive" style="width:100%">-->
+            <!--<input type="range" ng-model="deviceData.status.brightness" min="1" max="100" stop-event>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="flex justify-content-center align-items-center device-dim-height">
+
+        <!-- RANGE INPUT -->
+        <div class="device-range-position">
+            <div class="range range-positive">
+                <input type="range" ng-model="deviceData.status.brightness" min="1" max="100" stop-event ng-change="brightnessChange()">
+            </div>
+        </div>
+
+        <!-- ICON -->
+        <div class="device-icon-position pointer">
+            <span ng-click="openSettingModal()" class="icon-devices-size" ng-class="renderClass"></span>
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div class="device-desc-position">
+            <p class="device-name">{{::device.name}}</p>
+            <p class="device-desc">{{::device.description}}</p>
+        </div>
+
+        <!-- TOGGLE -->
+        <div class="device-toggle-position">
+            <label class="toggle toggle-positive">
+                <input type="checkbox" ng-model="deviceData.status.isOn">
+                <div class="track">
+                    <div class="handle"></div>
+                </div>
+            </label>
+        </div>
+
+    </div>
+
+</ion-item>
+

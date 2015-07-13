@@ -1,0 +1,36 @@
+<ion-modal-view class="ion-modal-view">
+
+    <div class="bar bar-header bar-positive">
+        <h1 class="title"> {{::device.name}} Setting</h1>
+    </div>
+
+    <ion-content padding="true" class="modal-ion-content has-header">
+
+        <div class="list">
+            <label class="item item-input modal-setting">
+                <span class="input-label col col-80 scene-modal-input-label">Delay (x100ms)</span>
+				<span class="col col-20">
+					<input type="number" ng-model="deviceData.delay" pattern="\d+" min="0" step="1" class="scene-modal-input">
+				</span>
+            </label>
+        </div>
+
+        <div style="padding-top: 60px"></div>
+
+    </ion-content>
+
+    <div class="tabs tabs-modal">
+        <div class="button-bar">
+
+            <a class="button button-full button-assertive" ng-click="deleteDevice()">
+                <i class="ion-ios-minus-outline tab-button-icon"></i>&nbsp;
+                <span>Delete</span>
+            </a>
+            <a class="button button-full button-balanced" ng-click="closeSettingsModal()">
+                <i class="ion-ios-checkmark-outline tab-button-icon"></i>&nbsp;
+                <span>Done</span>
+            </a>
+
+        </div>
+    </div>
+</ion-modal-view>

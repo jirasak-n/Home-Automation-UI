@@ -1,0 +1,1271 @@
+//************** ionic **************
+// **** your ionic variable changes can go here ****
+
+$energized:	#FFC022
+$assertive: #FF7959
+$dark: #EEEEEE
+$light: #FFFFFF
+$balanced: #3DAF6B
+$calm: #43CEE6
+$positive: #27AAE3
+$royal: #3F3F3F
+$stable: #B2B2B2
+$font-family-base: Arial, "Browallia New"
+$range-default-track-bg: $dark
+$range-positive-track-bg: $positive
+$menu-bg: #444444
+$button-height: 42px
+// *******************************************
+@import "../bower_components/ionic/scss/ionic"
+//****************** ionic *******************
+
+// **** your variable changes can go here ****
+$base_color: $positive
+$border_base_color: #008DCA
+$dark_bg_base_color: #3A3A3A
+$main_font_color: rgb(73,73,73)
+$desc_font_color: #CCCCCC
+$item_border: #F5F5F5
+$dark_color: #444444
+$off_input_color: #F0F0F0
+$divider_bg_color: #F7F7F7
+$divider_font_color: #666666
+$light_font_color: #D7D7D7
+$middle_gray_font_color: #BBBBBB
+$menu_item_border_color: #4C4C4C
+$device_scene_icon_width: 120px
+$device_icon_width: 98px
+$device_toggle_width: 90px
+$range_change_bg: rgba(245 , 245, 245, 0.8)
+$modal_header_height: 30px
+$modal_content_bg: rgba(80, 80, 80, 0.2)
+$modal_content_bg_min_680px: rgba(250, 250, 250, 0.2)
+$device_arrow_width: 40px
+$unlocked_icon_color: #E7E7E7
+$menu_item_user_bg: $royal
+$modal_icon_color: #303030
+$main_font_size: 15px
+$tab_button_font_size: 15.5px
+$button_font_size: 14px
+$icon_picker_height: 56px
+$user_item_menu_height: 44px
+$menu_item_height: 44px
+$menu_fix_item_height: 60px
+$device_manage_btn_height: 29px
+$profile_subheader_height: 140px
+$profile_field_border_color: #E2F6FF
+// *******************************************
+
+// your slick styles can go here...
+
+// Example Sass style
+
+// all pages ///////////////////////////////////////////////////
+
+.profile-subheader-height
+  height: $profile_subheader_height
+
+.bar-subheader.profile-subheader-height > div.flex
+  margin-top: -10px
+
+.profile-background-image
+  width: 100px
+  height: 100px
+  background-size: 100px 100px
+  border-radius: 50%
+  border-width: 0px
+  border-color: $base_color
+  border-style: solid
+
+.profile-ion-content
+  margin-top: $profile_subheader_height
+
+.profile-flex-column
+  padding: 10px
+  border-bottom: solid 1px $profile_field_border_color
+
+.profile-flex-column-2fields
+  flex: 0.5
+  -webkit-flex: 0.5
+  -moz-flex: 0.5
+  padding: 10px
+  border-bottom: solid 1px $profile_field_border_color
+  border-top: solid 1px $profile_field_border_color
+
+.profile-flex-column-line
+  flex-basis: 1px
+  -webkit-flex-basis: 1px
+  -moz-flex-basis: 1px
+  background: $profile_field_border_color
+
+.profile-icon
+  flex-basis: 30px
+  -webkit-flex-basis: 30px
+  -moz-flex-basis: 30px
+  color: $base_color
+  padding-right: 5px
+
+.profile-text
+  color: $main_font_color
+  text-align: left
+
+.spinner-in-button-div
+  ion-spinner
+    height: $button-height
+    position: absolute
+    margin: 10px 0 0 -36px
+  span
+    height: $button-height
+    position: absolute
+    margin: 3px 0 0 0px
+
+[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"]
+  background-color: $light
+
+.bar.bar-royal
+  border-color: $dark_bg_base_color !important
+  border-bottom: solid 1px $dark_bg_base_color !important
+
+.active .modal-backdrop-bg
+  opacity: 0.2 !important
+
+.spinner
+  margin-top: -4px
+
+.item-complex .item-content, .item-radio .item-content
+  padding: 0
+
+.item-content:active
+  background-color: transparent
+
+#scenes .item-content.activated
+  background-color: transparent
+
+.item
+  border-color: $item_border
+
+.loading-ion-view
+  background-color: $dark_bg_base_color
+  padding: 0
+
+.left-buttons, right-buttons
+  padding-left: 5px
+  padding-right: 5px
+
+.flaticon-studio
+  margin-top: -4px
+
+.flaticon-map15
+  margin-left: -4px
+
+#add-devices .flaticon-on
+  font-size: 30px
+
+.icon-devices-size.flaticon-on
+  font-size: 44px !important
+
+.icon-devices-size
+  font-size: 54px
+
+.device-icon-position [class*="flaticon"]
+  font-size: 48px
+
+.device-icon-position .flaticon-turn-off, .device-icon-position .flaticon-closed42, .device-icon-position .flaticon-open129
+  font-size: 42px !important
+
+.device-icon-position .flaticon-washing11
+  font-size: 39px
+
+.device-icon-position .flaticon-knife15
+  font-size: 45px
+
+.device-icon-position  .flaticon-camera65
+  font-size: 42px
+
+.device-scene-icon-position [class*="flaticon"]
+  font-size: 50px
+
+.device-scene-icon-position .flaticon-closed42, .device-scene-icon-position .flaticon-open129
+  font-size: 44px
+
+.device-scene-icon-position .flaticon-washing11
+  font-size: 44px
+
+.device-scene-icon-position .flaticon-camera65
+  font-size: 47px
+
+#add-devices .device-icon-position [class*="flaticon"]
+  font-size: 34px
+
+#add-devices .device-icon-position .flaticon-dining4
+  font-size: 38px
+
+#add-devices .device-icon-position .flaticon-audio39
+  font-size: 38px
+
+#add-devices .device-icon-position > .flaticon-closed42, #add-devices .device-icon-position > .flaticon-turn-off
+  font-size: 29px !important
+
+.input-label
+  color: $middle_gray_font_color
+  font-size: $main_font_size
+
+.input-detail
+  color: $main_font_color
+  font-size: $main_font_size
+
+.range
+  padding: 0
+  margin: 8px 0
+  height: 43px
+
+.range input
+  margin-left: 0
+  margin-right: 0
+  padding-left: 0
+  padding-right: 0
+  height: auto
+
+.range input::-webkit-slider-thumb
+  position: relative
+  width: 15px
+  height: 28px
+  border-radius: 15px
+  background-color: $off_input_color
+  cursor: pointer
+  -webkit-appearance: none
+  border-bottom: solid 2px #E4E4E4
+  box-shadow: none
+  &::before
+    width: 2001px
+
+.range-input
+  margin-left: 0
+  margin-right: 0
+
+.range-input-slider-thumb
+  width: 0
+  height: 0
+  border-bottom: solid 29px $off_input_color
+  border-left: solid 15px transparent
+  border-right: solid 15px transparent
+  background: transparent
+  box-shadow: none
+  padding-left: 1px
+  padding-right: 0px
+  padding-top: 12px
+
+#extended-range2 .range input
+  margin-left: 0
+  margin-right: 0
+
+#extended-range2 .range input::-webkit-slider-thumb
+  @extend .range-input-slider-thumb
+  &::before
+    background: transparent
+
+#scene-modal-temp-range2 .range input
+  @extend .range-input
+  margin-left: 0
+  margin-right: 0
+
+#scene-modal-temp-range2 .range input::-webkit-slider-thumb
+  @extend .range-input-slider-thumb
+  &::before
+    background: transparent
+
+#scene-modal-hue-range2 .range input
+  @extend .range-input
+  margin-left: 0
+  margin-right: 0
+
+#scene-modal-hue-range2 .range input::-webkit-slider-thumb
+  @extend .range-input-slider-thumb
+  &::before
+    background: transparent
+
+.control-scene-iden-btn
+  font-size: $button_font_size
+  color: $light
+
+.toggle .handle
+  box-shadow: none
+
+.toggle .track
+  border: solid 2px $off_input_color
+  background-color: $off_input_color
+
+.scan-device
+  margin-top: 2px
+  right: 2px
+
+.ion-navicon
+  margin-top: -1.5px !important
+
+.button, .item-divider, .search-bg, .bar, .modal-item-divider
+  border: 0
+
+.bar .title
+  font-weight: bold
+
+.button-icon
+  margin-top: 1px
+
+.item-divider
+  padding-top: 5px
+  padding-bottom: 5px
+  min-height: 26px
+  background-color: $divider_bg_color
+  border-bottom: solid 1px $item_border
+  font-weight: bold
+  font-size: 13px
+  color: $divider_font_color
+
+.list
+  padding-top: 0px !important
+
+.flex
+  display: flex
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+
+.flex-wrap
+  flex-wrap: wrap
+  -webkit-flex-wrap: wrap
+  -moz-flex-wrap: wrap
+  -ms-flex-wrap: wrap
+
+.flex-nowrap
+  flex-wrap: nowrap
+  -webkit-flex-wrap: nowrap
+  -moz-flex-wrap: nowrap
+  -ms-flex-wrap: nowrap
+
+.flex-wrap-reverse
+  flex-wrap: wrap-reverse
+  -webkit-flex-wrap: wrap-reverse
+  -moz-flex-wrap: wrap-reverse
+  -ms-flex-wrap: wrap-reverse
+
+.justify-content-center
+  justify-content: center
+  -webkit-justify-content: center
+  -moz-justify-content: center
+  -ms-justify-content: center
+  text-align: center
+
+.justify-content-flex-start
+  justify-content: flex-start
+  -webkit-justify-content: flex-start
+  -moz-justify-content: flex-start
+  -ms-justify-content: flex-start
+
+.justify-content-flex-end
+  justify-content: flex-end
+  -webkit-justify-content: flex-end
+  -moz-justify-content: flex-end
+  -ms-justify-content: flex-end
+
+.justify-content-space-between
+  justify-content: space-between
+  -webkit-justify-content: space-between
+  -moz-justify-content: space-between
+  -ms-justify-content: space-between
+
+.justify-content-space-around
+  justify-content: space-around
+  -webkit-justify-content: space-around
+  -moz-justify-content: space-around
+  -ms-justify-content: space-around
+
+.align-items-center
+  align-items: center
+  -webkit-align-items: center
+  -moz-align-items: center
+  -ms-align-items: center
+
+.align-items-flex-start
+  align-items: flex-start
+  -webkit-align-items: flex-start
+  -moz-align-items: flex-start
+  -ms-align-items: flex-start
+
+.align-items-flex-end
+  align-items: flex-end
+  -webkit-align-items: flex-end
+  -moz-align-items: flex-end
+  -ms-align-items: flex-end
+
+.flex-direction-row
+  flex-direction: row
+  -webkit-flex-direction: row
+  -moz-flex-direction: row
+  -ms-flex-direction: row
+
+.flex-direction-column
+  flex-direction: column
+  -webkit-flex-direction: column
+  -moz-flex-direction: column
+  -ms-flex-direction: column
+
+.align-self-center
+  align-self: auto
+  -webkit-align-self: auto
+  -moz-align-self: auto
+  -ms-align-self: auto
+
+.align-self-flex-start
+  align-self: flex-start
+  -webkit-align-self: flex-start
+  -moz-align-self: flex-start
+  -ms-align-self: flex-start
+
+.align-self-flex-end
+  align-self: flex-end
+  -webkit-align-self: flex-end
+  -moz-align-self: flex-end
+  -ms-align-self: flex-end
+
+.scene-line
+  border-right: solid 1px $dark
+  height: 70px
+  flex-basis: 1px
+  -webkit-flex-basis: 1px
+  -moz-flex-basis: 1px
+
+.scene-input
+  height: 35px
+
+.icon-picker-height
+  height: $icon_picker_height
+
+input.scene-name
+  color: $main-font-color
+  font-size: $main_font_size
+
+input.scene-desc
+  color: $desc_font_color
+  font-size: 13px
+
+.icon-decrease
+  opacity: 0.3
+
+.temperature-font
+  font-size: 34px
+  color: #D7D7D7
+  -webkit-font-smoothing: antialiased
+  -webkit-text-stroke-color: $light
+  -webkit-text-stroke-width: 1.4px
+
+.temperature-font-unit
+  font-size: 18px
+  color: $light_font_color
+  -webkit-font-smoothing: antialiased
+  -webkit-text-stroke-color: $light
+  -webkit-text-stroke-width: 0.2px
+
+.lock-state-icon
+  position: absolute
+  top: 48%
+  left: 50px
+  background-color: $light
+  border-radius: 15px
+  color: $base_color
+  font-size: 28px
+  padding: 2px 6px
+  border: solid 1px #D2F1FF
+  z-index: 1
+
+.unlocked-border
+  border: solid 1px $dark
+
+.reachable-icon
+  position: absolute
+  top: -6px
+  margin-left: 67px
+  z-index: 2
+
+.reachable-new-device-icon
+  @extend .reachable-icon
+  margin-left: 115px
+
+.reachable-new-device-icon .badge
+  font-size: 12px
+  padding: 3px 5px 3px 5px
+
+.range-change
+  background: $range_change_bg
+  position: absolute
+  left: 0
+  top: 0
+  height: 92px
+  width: 100%
+  z-index: 1
+
+.range-level-font2
+  position: absolute
+  top: 34px
+  left: 0
+  width: $device_icon_width
+  text-align: center
+  font-size: 36px
+  color: $dark_color
+  z-index: 2
+  letter-spacing: 1px
+  -webkit-font-smoothing: antialiased
+  -webkit-text-stroke-color: $range_change_bg
+  -webkit-text-stroke-width: 1.5px
+
+.control-scene-icon-position
+  position: relative
+  height: 100%
+  top: 0px
+  left: 0
+  text-align: center
+  width: 90px
+  display: inline-block
+
+.control-scene-icon-position > .icon-devices-size
+  color: $base_color
+  margin-top: -5px
+
+.device-icon-position
+  @extend .flex, .justify-content-center, .align-items-center
+  flex-basis: $device_icon_width
+  -webkit-flex-basis: $device_icon_width
+  -moz-flex-basis: $device_icon_width
+
+.device-scene-icon-position
+  @extend .flex, .justify-content-center, .align-items-center
+  flex-basis: $device_scene_icon_width
+  -webkit-flex-basis: $device_scene_icon_width
+  -moz-flex-basis: $device_scene_icon_width
+
+.device-desc-position
+  @extend .align-self-center
+  font-size: 54px
+  color: $base_color
+  flex: 1
+  -webkit-flex: 1
+  -moz-flex: 1
+  text-align: left
+
+.device-item.device-dim-height .device-desc-position
+  margin-top: -20px
+
+.device-toggle-position
+  flex-basis: $device_toggle_width
+  -webkit-flex-basis: $device_toggle_width
+  -moz-flex-basis: $device_toggle_width
+
+.device-range-position
+  position: absolute
+  bottom: -8px
+  left: $device_icon_width
+  right: 90px
+  width: auto
+  z-index: 2
+
+.device-range-position .range
+  width: 100%
+
+.circle-extended-color-status
+  width: 15px
+  height: 15px
+  position: absolute
+  left: 13px
+  bottom: 14px
+  z-index: 2
+  border-radius: 10px
+  border: solid 2px transparent
+
+.circle-extended-color-status-bg
+  width: 15px
+  height: 15px
+  position: absolute
+  left: 13px
+  bottom: 14px
+  z-index: 1
+  border-radius: 10px
+  border: solid 2px transparent
+  background: $dark
+
+.scene-modal-input-label
+  color: #FCFCFC
+  font-weight: normal
+  font-size: $main_font_size
+  padding-left: 12px
+
+.scene-modal-input-label-unit
+  color: $middle_gray_font_color
+  font-weight: normal
+  text-align: right
+  padding-right: 0
+  position: relative
+  right: 0px
+  top: 0px
+
+input.scene-modal-input
+  text-align: right
+  padding-right: 8px
+  color: $light
+  position: relative
+  bottom: -2px
+  font-size: $main_font_size
+
+input.scene-modal-color-loop-time
+  display: block
+  width: 53px
+  text-align: right
+  background: transparent
+  color: $light
+  font-size: $main_font_size
+
+.item.modal-setting
+  border-color: $dark
+  padding: 0 2px 0 3px
+  height: 46px
+  background: rgba(100, 100, 100, 0.2)
+  margin-right: 0
+
+.item.modal-setting select
+  background: transparent
+  color: $light
+
+.modal-ionic-scroll-bg
+  -webkit-filter: blur(5px)
+
+.modal-backdrop.active
+  background-color: rgba(255, 255, 255, 0.5) !important
+
+.modal-range-title
+  text-align: center
+  background-color: transparent
+  color: $light
+  font-size: 16px
+
+.modal-range-padding
+  padding: 0 16px
+
+.range-image-height
+  height: 25px
+
+.range-image-height img
+  width: 100%
+  height: 100%
+
+.ion-modal-view
+  background-color: transparent
+
+.modal-ion-content
+  z-index: 98
+  //background-color: $modal_content_bg !important
+
+.modal-setting-font
+  background: transparent
+  color: $light
+  font-size: 16px
+  height: 50px
+
+.modal-setting-font .toggle
+  margin-top: 1px
+
+.modal-setting-font input
+  background: transparent
+  color: $light
+  font-size: 16px
+  width: 100%
+  text-align: right
+
+.modal-setting-font-title
+  @extend .auto-flex-column
+
+.modal-setting-input
+  flex-basis: 60px
+  -webkit-flex-basis: 60px
+  -moz-flex-basis: 60px
+  text-align: right
+
+.tabs-modal
+  height: 42px
+  background: transparent
+  border: 0
+  bottom: 14px
+  z-index: 99
+
+.tabs .button
+  border-radius: 0px !important
+
+.modal-tab-icon
+  font-size: 24px
+
+.modal-button-bar
+  margin: -12px 19px 15px 19px
+
+.modal-button-font
+  font-size: $tab_button_font_size
+
+.modal-right-button-font
+  border-left-width: 0px
+  border-left: 0px
+  font-size: $tab_button_font_size
+
+.pointer
+  cursor: pointer
+
+.bar.bar-base_color
+  background-color: $base_color
+  background-image: linear-gradient(0deg, $border_base_color, $border_base_color 50%, transparent 50%)
+  color: $light
+  border-bottom: solid 1px $border_base_color
+  border-top: 0
+  border-left: 0
+  border-right: 0
+
+.button
+  color: $light
+
+.button:hover
+  color: $light
+
+.button:active
+  color: $light
+
+.button-clear.button-clear
+  color: $light
+
+.button.button-base_color
+  border-color: $border_base_color
+  background-color: $base_color
+  color: $light
+
+.button.button-base_color:active
+  border-color: $border_base_color
+  background-color: $border_base_color
+  color: $light
+
+.range.modal-range-base_color
+  margin-top: -10px
+  padding: 2px 1px
+  margin-left: 0px
+
+.popup-title
+  color: $middle_gray_font_color
+
+.popup-body
+  padding: 10px 15px
+  text-align: left
+  overflow: hidden
+
+.popup
+  width: 270px
+
+.search-height
+  margin-top: 40px
+
+a
+  text-decoration: none !important
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p
+  color: $dark
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p
+  line-height: 1.6
+
+textarea, input[type="text"], input[type="search"]
+  line-height: 1.6
+
+.bar.item-input-inset .item-input-wrapper input
+  padding-left: 0px
+
+*::-webkit-input-placeholder
+  color: $desc_font_color !important
+
+*:-moz-placeholder
+  color: $desc_font_color !important
+
+*:-ms-input-placeholder
+  color: $desc_font_color !important
+
+input[type="search"]
+  padding-top: 2px
+  color: $dark_color
+
+.assertive-color
+  color: $assertive !important
+
+.balanced-color
+  color: $balanced !important
+
+.base_color
+  color: $base_color
+
+.base_color_bg
+  background-color: $base_color !important
+
+.dark_base_color_bg
+  background-color: #d39511
+
+.assertive-bg
+  background-color: $assertive !important
+
+.dark-assertive-bg
+  background-color: #cc2511
+
+.light-bg
+  background-color: $light !important
+
+.inverse_base_color_bg
+  background-color: $dark !important
+
+.inverse_base_color
+  color: $dark !important
+
+.dark_bg_base_color_font
+  color: $dark_bg_base_color
+
+.dark_bg_base_color
+  background-color: $dark_bg_base_color !important
+
+.border_base_color
+  color: $border_base_color
+
+.balanced-bg
+  background-color: $balanced !important
+
+.dark
+  color: $dark !important
+
+.positive-bg
+  background-color: $base_color !important
+
+.calm-bg
+  background-color: $calm !important
+
+.font-bold
+  font-weight: bold
+
+.title
+  font-weight: bold
+  font-size: 16px
+  color: $light
+
+.zero-padding
+  padding: 0
+
+.my-pull-right
+  float: right
+  padding: 1px 0 0 18px
+
+.scroll-content
+  background-color: $light
+
+.ionic-scroll
+  background-color: $light
+
+.text-center-title
+  text-align: center
+  color: $dark
+
+.ion-nav-bar-border
+  border-bottom: 0 !important
+
+.device-manage-desc
+  color: $middle_gray_font_color
+  z-index: 0
+
+.device-manage-icon-position
+  position: absolute
+  top: 27px
+  left: -2px
+  z-index: 2
+
+.device-manage-margin-desc
+  margin-top: 12px !important
+  color: $middle_gray_font_color
+
+.device-manage-btn-position
+  cursor: pointer
+  background: $base_color
+  border-radius: 4px
+  padding: 6px 8px
+
+.identifying-btn
+  padding: 5px 6px 7px 6px
+
+.device-manage-btn-position:active
+  background: #008dcc
+
+.device-manage-iden-btn
+  font-size: $button_font_size
+  color: $light
+  height: $device_manage_btn_height
+
+.device-manage-identifying-btn
+  font-size: 13px
+  color: $light
+  height: $device_manage_btn_height
+
+.device-manage-arrow-position
+  font-size: $button_font_size
+  position: absolute
+  top: 40px
+  right: 10px
+  color: #ddd
+  z-index: 1
+
+.device-manage-arrow-bg
+  background: $light
+  position: absolute
+  left: 0
+  top: 0
+  z-index: -3
+  width: 100%
+
+.device-manage-arrow-bg:active
+  background: rgba(231,227,218,0.7)
+  position: absolute
+  left: 0
+  top: 0
+  z-index: 0
+  width: 100%
+  color: #444
+
+.manage-device-name-desc-area
+  position: absolute
+  padding-left: 32px
+  z-index: 0
+  cursor: pointer
+  width: 95%
+
+.switch-new-devices-div .device-item
+  background: #fcfdee !important
+
+p.device-name
+  margin: 0 0 4px 0
+  color: $main_font_color
+  font-size: $button_font_size
+  text-overflow: ellipsis
+  margin-top: -2px
+
+p.device-desc
+  color: $desc_font_color
+  font-size: 12px
+  text-overflow: ellipsis
+  padding-top: 1px
+
+p.energy-desc
+  text-overflow: ellipsis
+  color: $desc_font_color
+  font-size: 10px
+  margin-top: -4px
+
+p.energy-desc > i
+  font-size: 12px
+
+p.energy-desc > span
+  font-size: 10px
+  font-weight: bold
+  color: $middle_gray_font_color
+
+.device-name-desc-area
+  padding-left: 40px
+  z-index: 2
+  width: 95%
+
+.icon-manage-devices-size
+  font-size: 54px !important
+  padding: 12px
+
+.icon-manage-new-devices-size
+  font-size: 80px !important
+  font-weight: bold
+  padding: 12px
+
+.plus-bar-icon
+  color: $light
+  font-size: 32px
+  font-weight: normal
+  margin-top: 2px
+  -webkit-font-smoothing: antialiased
+  -webkit-text-stroke-color: $light
+  -webkit-text-stroke-width: 1px
+
+.tabs-position
+  height: 44px
+  width: 101%
+  left: -1px
+  right: -1px
+  bottom: -2px
+  background: transparent
+
+.tabs-button-bar
+  margin-top: -15px
+  height: 44px
+
+.tabs-button-font
+  font-size: $tab_button_font_size
+
+.tabs-primary-color
+  background: rgba(41,170,227,0.9) !important
+  border-color: rgba(22,124,169,0.9) !important
+
+.tab-button-text
+  font-size: $tab_button_font_size
+
+.tab-button-icon
+  font-size: 24px
+  position: relative
+  top: 3px
+
+#add-devices .item-selected
+  background-color: #F3FFFF !important
+
+.item-input
+  border: 0
+  background: transparent
+  font-size: $main_font_size
+
+.item.device-item
+  padding: 0
+
+.device-item
+  border-bottom: solid 1px $item_border !important
+  z-index: 0 !important
+
+.control-scene-btn-position
+  cursor: pointer
+  background: $base_color
+  border-radius: 4px
+  padding: 6px 8px
+
+.control-scene-btn-position:active
+  background: $base_color
+
+.modal-item-divider-div
+  position: relative
+  z-index: 99
+
+.icon-choosed-border
+  border: solid 1px $dark !important
+  background: $light !important
+  color: $base_color !important
+
+.radio-label
+  width: 100%
+  cursor: pointer
+  display: block
+
+.icon-size-for-choose
+  font-size: 40px
+  margin-left: 0px
+  margin-top: 14px
+
+.icon-size-for-choose.flaticon-on
+  font-size: 37px
+
+.icon-radio-display
+  display: none
+
+.icon-item
+  background: rgba(240, 240, 240, 0.5)
+  border: solid 1px rgba(255, 255, 255, 0.1)
+  height: 58px
+  color: $modal_icon_color
+  text-align: center
+  width: 20%
+
+.menu-item-flex-basis
+  flex-basis: 54px
+  -webkit-flex-basis: 54px
+  -moz-flex-basis: 54px
+  text-align: center
+
+.menu-title-flex
+  flex: 1
+  -webkit-flex: 1
+  -moz-flex: 1
+  text-align: left
+  padding-left: 5px
+  font-size: 13px
+  font-weight: bold
+
+.user-item-menu .item-content
+  background-color: $menu_item_user_bg !important
+  height: $user_item_menu_height !important
+
+.user-item-menu
+  position: absolute
+  z-index: 11
+  right: 0
+  left: 0
+
+.item-menu .badge
+  top: 11px
+  right: 7px
+  text-align: center
+
+.item-menu .auto-flex-column
+  text-align: center
+
+.item-menu .menu-name
+  font-size: 10px
+  color: $light
+
+#main-menu-fix .item-menu .flex
+  margin-top: 2px
+
+#main-menu-fix .item-menu .badge
+  top: 3px
+  right: 5px
+  text-align: center
+
+#main-menu-fix .item-menu .item-content
+  height: $menu_fix_item_height
+  background-color: $dark_color
+  color: $light
+  padding: 0px 5px
+  cursor: pointer
+
+.item-menu .item-content
+  height: $menu_item_height
+  background-color: $dark_color
+  color: $light
+  padding: 0px 5px
+  cursor: pointer
+
+.item-menu .item-content:active
+  background-color: $dark_color
+  color: $light
+
+.item-menu .item-content.activated
+  background-color: $dark_color !important
+  color: $light
+
+.user-item-menu.item-menu .item-content.activated
+  border-color: $dark_bg_base_color
+  background-color: $menu_item_user_bg !important
+
+.menu-item-active
+  background-color: $dark_color !important
+  color: $light !important
+  border-color: $dark_bg_base_color
+
+.menu-active
+  @extend .menu-item-active
+  border-left: solid 10px $base_color !important
+  margin-left: -5px
+  border-color: $menu_item_border_color
+
+#main-menu-fix .menu-active > .item-content
+  margin-left: -5px
+
+.menu-active > .item-content
+  padding: 0px 0px
+
+#main-menu ion-content
+  background-color: $dark_color
+
+#main-menu .item
+  border-bottom: solid 1px
+  border-color: $menu_item_border_color
+
+.menu-divider
+  font-size: $main_font_size
+  background-color: $dark_bg_base_color
+  height: 20px
+
+.menu-divider p
+  color: #999999
+  margin-top: -5px
+
+#main-menu ion-item
+  font-size: $main_font_size
+
+#main-menu-fix ion-content
+  background-color: $dark_color
+
+#main-menu-fix .item
+  border-bottom: solid 1px
+  border-color: $menu_item_border_color
+
+.auto-flex-column
+  flex: 1
+  -webkit-flex: 1
+  -moz-flex: 1
+
+.device-onoff-height .ion-ios-unlocked
+  color: $unlocked_icon_color
+
+.device-manage-height .ion-ios-unlocked
+  color: $unlocked_icon_color
+
+.device-onoff-height
+  height: 86px
+
+.device-dim-height
+  height: 105px
+
+.device-manage-height
+  height: 90px
+
+.arrow-right-position
+  flex-basis: $device_arrow_width
+  -webkit-flex-basis: $device_arrow_width
+  -moz-flex-basis: $device_arrow_width
+  color: $middle_gray_font_color
+
+#manage-devices .device-desc:last-child
+  margin-top: -3px !important
+
+.new-devices-manage-bg
+  background-color: floralwhite
+
+#add-devices-tabs
+  .button-bar > .button:last-child
+    outline: solid 1px $border_base_color
+    border: 0 !important
+
+.logo-font
+  color: #ddd
+  font-size: 1.4em
+  text-align: center
+
+.add-devices-font
+  font-size: 28px
+  color: $desc_font_color
+  -webkit-font-smoothing: antialiased
+  -webkit-text-stroke-color: $light
+  -webkit-text-stroke-width: 1px
+
+.add-devices-icon
+  font-size: 36px
+  color: $base_color
+
+.height-100-percent
+  height: 100%
+
+.has-user-item-header
+  top: $user_item_menu_height
+
+.platform-ios.platform-cordova:not(.fullscreen) .has-user-item-header
+  top: 64px
+
+.platform-ios.platform-cordova:not(.fullscreen) .user-item-header .item-content
+  height: $user_item_menu_height
+
+@media (max-width: 679px)
+  .modal-ion-content
+    background-color: $modal_content_bg !important
+
+@media (min-width: 680px)
+  .modal-ion-content
+    background-color: $modal_content_bg_min_680px !important
+
+@media (min-width: 768px)
+  ion-side-menu-content [menu-toggle]
+    display: none
+
+
+

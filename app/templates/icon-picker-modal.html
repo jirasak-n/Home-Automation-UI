@@ -1,0 +1,49 @@
+<ion-modal-view class="ion-modal-view" ng-init="enableSearch=false; searchIcon=''">
+
+    <div class="bar bar-header  bar-positive item-input-inset" ng-show="enableSearch==true">
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input type="search" placeholder="Search" ng-model="searchIcon" id="searchInput" ng-change="scrollTop()">
+        </label>
+        <button class="button button-clear" ng-click="enableSearch=false; searchIcon=''">Cancel</button>
+    </div>
+
+    <div class="bar bar-header bar-positive" ng-show="enableSearch==false">
+        <h1 class="title"> Choose Icon </h1>
+        <div class="buttons">
+            <button class="button ion-ios-search" style="font-size: 26px" ng-click="enableSearch=true"></button>
+        </div>
+    </div>
+
+    <ion-content padding="true" class="modal-ion-content has-header">
+
+
+        <div ng-repeat="group in iconsByGroup">
+            <div class="item item-divider" style="border-bottom: solid 1px #ddd; background: rgba(255,255,255,0.6); margin-top: 0px" ng-hide="(iconsInGroupFilter).length == 0">{{ group.groupName }}</div>
+
+            <div class="flex flex-wrap align-items-center justify-content-flex-start">
+                <div ng-repeat="value in iconsInGroupFilter = (group.icons | filter:searchIcon)" ng-click="closeIconPickerModal()" ng-class="{'icon-choosed-border':(temp.iconId == value.$id)}" class="icon-item">
+
+                    <label class="radio-label">
+                        <i class="icon icon-size-for-choose" ng-class="value.icon"></i>
+                        <input type="radio" ng-model="temp.iconId" ng-value="value.$id" class="icon-radio-display">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div style="padding-top: 48px"></div>
+
+    </ion-content>
+
+    <div class="tabs tabs-modal">
+        <div class="button-bar">
+            <a class="button button-full button-positive" ng-click="closeIconPickerModal()">
+                <i class="ion-ios-close-outline tab-button-icon"></i>&nbsp;
+                <span>Close</span>
+            </a>
+        </div>
+    </div>
+
+</ion-modal-view>

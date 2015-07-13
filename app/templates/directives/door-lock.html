@@ -1,0 +1,49 @@
+<ion-item class="device-item device-onoff-height">
+
+    <!-- LOCK STATE -->
+    <div class="lock-state-icon flex align-items-center justify-content-center unlocked-border" ng-if="!device.status.isLock">
+        <span class="ion-ios-unlocked auto-flex-column"></span>
+    </div>
+    <div class="lock-state-icon flex align-items-center justify-content-center" ng-if="device.status.isLock">
+        <span class="ion-ios-locked positive auto-flex-column"></span>
+    </div>
+
+    <!-- REACHABLE BADGE -->
+    <div class="reachable-icon" ng-if="!device.status._reachable">
+        <span class="badge badge-assertive"><i class="ion-alert"></i></span>
+    </div>
+
+
+    <div class="flex justify-content-center align-items-center device-onoff-height">
+        <!-- ICON (DOOR STATE)-->
+        <div class="device-icon-position">
+            <span class="icon-devices-size flaticon-closed42 positive" ng-show="(device.status._doorState) == 1"></span>
+            <span class="icon-devices-size flaticon-open129 positive" ng-show="(device.status._doorState) == 0"></span>
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div class="device-desc-position">
+            <p class="device-name">{{::device.name}}</p>
+            <p class="device-desc">{{::device.description}}</p>
+            <!--<p class="energy-desc" ng-if="::device.capabilities.energyMeter">-->
+                <!--<i class="ion-speedometer"></i>&nbsp;&nbsp;-->
+                <!--<span>{{device.status._power}}</span> W /&nbsp;-->
+                <!--<span>{{device.status._voltage}}</span> V /&nbsp;-->
+                <!--<span>{{device.status._current}}</span> A /&nbsp;-->
+                <!--<span>{{device.status._energy}}</span> kWh-->
+            <!--</p>-->
+        </div>
+
+        <!-- TOGGLE -->
+        <div class="device-toggle-position">
+            <label class="toggle toggle-positive">
+                <input type="checkbox" ng-model="device.status.isLock" ng-change="save(device)">
+                <div class="track">
+                    <div class="handle"></div>
+                </div>
+            </label>
+        </div>
+    </div>
+
+</ion-item>
+

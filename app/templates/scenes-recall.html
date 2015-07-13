@@ -1,0 +1,35 @@
+<ion-view view-title="Scenes" id="control-scenes">
+
+    <ion-content class="zero-padding">
+
+        <ion-list>
+
+            <ion-item class="device-item device-onoff-height" ng-repeat="scene in scenes">
+                <div class="flex justify-content-center align-items-center device-onoff-height">
+                    <!-- ICON -->
+                    <div class="device-icon-position">
+                        <span class="icon-devices-size positive" ng-class="::icons[scenesAppData[scene.$id].uiOptions.iconId].icon"></span>
+                    </div>
+
+                    <!-- DESCRIPTION -->
+                    <div class="device-desc-position">
+                        <p class="device-name">{{::scene.name}}</p>
+                        <p class="device-desc">{{::scene.description}}</p>
+                    </div>
+
+                    <!-- TOGGLE -->
+                    <div class="device-toggle-position">
+                        <a class="control-scene-btn-position" ng-click="scene.activate=true; scenes.$save(scene)" ng-class="{'balanced-bg':scene.activate}">
+                            <span ng-if="!scene.activate" class="control-scene-iden-btn">Recall</span>
+                            <span ng-if="scene.activate" class="control-scene-iden-btn">Activated</span>
+                        </a>
+                    </div>
+                </div>
+
+            </ion-item>
+
+        </ion-list>
+
+    </ion-content>
+
+</ion-view>

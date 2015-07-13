@@ -1,0 +1,87 @@
+<ion-view view-title="{{title}}">
+
+    <div id="create-scene">
+        <ion-content class="zero-padding">
+
+            <div class="item item-divider">Scene Information</div>
+
+            <form name="createSceneForm">
+
+                <div class="flex justify-content-center align-items-center light-bg device-dim-height">
+                    <div class="device-scene-icon-position pointer" ng-click="openIconPickerModal()" ng-if="device.deviceType!='DoorLock'">
+                        <span class="logo-font" ng-if="!temp.iconId">+ Logo</span>
+
+                        <span class="icon-devices-size positive" ng-class="icons[temp.iconId].icon" ng-if="temp.iconId"></span>
+                    </div>
+
+                    <div class="scene-line"></div>
+
+                    <div class="auto-flex-column">
+                        <label class="item item-input scene-input">
+                            <input type="text" placeholder="Name" name="name" ng-model="temp.name" class="scene-name">
+                        </label>
+                        <label class="item item-input scene-input">
+                            <input type="text" placeholder="Description" name="desc" ng-model="temp.description" class="scene-desc">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="item item-divider">Devices</div>
+
+                <div class="list light-bg" style="margin-top: 0px">
+                    <ion-list ng-if="temp.devices">
+                        <div ng-repeat="(key, deviceInScene) in temp.devices">
+                            <div style="position: relative">
+                                <div switch-device
+                                     device-id="{{key}}"
+                                     device-data="deviceInScene"
+                                     directive-name="{{deviceTypes[devices[key].deviceType].sceneControlSettingDirective}}"
+                                     directive-event="{onDelete: deleteDevice(key)}"></div>
+                            </div>
+                        </div>
+                    </ion-list>
+
+                    <div ng-click="openDevicePickerModal()"
+                         style="border: dashed 2px #e7e7e7; height:64px; margin:25px 10px 25px 10px ;cursor:pointer; border-radius:2px" class="flex justify-content-center align-items-center">
+                        <div style="text-align: center; color: #bbb">
+                            <i class="ion-ios-plus-outline plus-icon" style="font-size: 27px; padding-right: 5px"></i>
+                            <span class="add-devices-font">Add Devices</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+
+            <div style="padding-top: 40px"></div>
+
+        </ion-content>
+
+        <div class="tabs tabs-modal">
+            <div class="button-bar">
+                <a class="button button-full button-assertive" ng-click="deleteScene()" ng-if="scene">
+                    <div ng-if="!confirmDelete">
+                        <i class="ion-ios-minus-outline tab-button-icon"></i>&nbsp;
+                        <span>Delete</span>
+                    </div>
+                    <div ng-if="confirmDelete" class="spinner-in-button-div">
+                        <ion-spinner icon="spiral"></ion-spinner>
+                        <span>Deleting..</span>
+                    </div>
+                </a>
+                <a class="button button-full button-balanced flex align-items-center" ng-click="saveScene()">
+                    <div ng-if="!disableSaveButton">
+                        <i class="ion-ios-checkmark-outline tab-button-icon"></i>&nbsp;
+                        <span>Done</span>
+                    </div>
+                    <div ng-if="disableSaveButton" class="spinner-in-button-div">
+                        <ion-spinner icon="spiral"></ion-spinner>
+                        <span>Saving..</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</ion-view>

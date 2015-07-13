@@ -1,0 +1,133 @@
+<ion-modal-view class="ion-modal-view">
+
+    <div class="bar bar-header bar-positive">
+        <h1 class="title"> {{::device.name}} Setting</h1>
+    </div>
+
+    <ion-content padding="true" class="modal-ion-content has-header">
+
+        <label class="item item-input modal-setting item-select">
+            <span class="input-label col col-80 scene-modal-input-label">Color Mode</span>
+            <select ng-model="select.colorMode">
+                <option value="COLOR_TEMP">Color Temperature</option>
+                <option value="HUE_SAT">Hue/Sat</option>
+                <option value="COLOR_LOOP">Color Loop</option>
+            </select>
+        </label>
+
+        <!--Temp Color-->
+        <div ng-if="select.colorMode=='COLOR_TEMP'" id="scene-modal-temp-range2">
+            <div class="list modal-range-padding range-image-height" style="margin-top: 20px">
+                <img src="images/temp-color.jpg">
+            </div>
+            <div class="range" style="margin-top: -48px">
+                <input type="range" ng-model="deviceData.status.colorTemperature" min="2000" max="6500" style="background: transparent">
+            </div>
+        </div>
+
+        <!--Hue Color-->
+        <div ng-if="select.colorMode=='HUE_SAT'">
+            <div class="list modal-range-padding" style="margin-top: 20px">
+                <div style="background-color: #ffffff" class="range-image-height">
+                    <img src="images/hue-color.jpg" style="opacity: {{deviceData.status.saturation/100}}">
+                </div>
+            </div>
+            <div id="scene-modal-hue-range2">
+                <div class="range modal-range-base_color" style="margin-top: -48px">
+                    <input type="range" ng-model="deviceData.status.hue" min="1" max="36000" style="background: transparent">
+                </div>
+            </div>
+
+            <!--Saturation-->
+            <div class="modal-range-title" style="padding: 23px 0 2px 0; margin: -25px 0 0 0">
+                Saturation
+            </div>
+            <div class="range range-positive modal-range-padding" style="margin-top: -1px">
+                <input type="range" ng-model="deviceData.status.saturation" min="1" max="100">
+            </div>
+        </div>
+
+        <div class="list" style="margin: -5px 0" ng-if="select.colorMode=='COLOR_LOOP'">
+            <!--Color Loop Time-->
+            <div class="item item-toggle" style="background-color: transparent; border: 0">
+                <span class="scene-modal-input-label">Color Loop Time (s)</span>
+                <label class="toggle">
+                    <input type="number" pattern="\d+" min="0" step="1" ng-model="deviceData.status.colorLoopTime" class="scene-modal-color-loop-time">
+                </label>
+            </div>
+            <!--Color Loop Status-->
+            <div class="item item-toggle" style="background-color: transparent; border: 0; margin-top: -10px; padding-bottom: 20px">
+                <span class="scene-modal-input-label">Color Loop</span>
+                <label class="toggle toggle-positive">
+                    <input type="checkbox" ng-model="deviceData.status.colorLoopActive">
+
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <div class="list">
+            <label class="item item-input modal-setting">
+                <span class="input-label col col-80 scene-modal-input-label">Brightness transition (x100ms)</span>
+				<span class="col col-20">
+					<input type="number" ng-model="deviceData.settings.brightnessTransitionTime" pattern="\d+" min="0"
+                           step="1"
+                           class="scene-modal-input">
+				</span>
+            </label>
+
+            <label class="item item-input modal-setting">
+                <span class="input-label col col-80 scene-modal-input-label">Color temperature transition (x100ms)</span>
+				<span class="col col-20">
+					<input type="number" ng-model="deviceData.settings.colorTemperatureTransitionTime" pattern="\d+"
+                           min="0" step="1"
+                           class="scene-modal-input">
+				</span>
+            </label>
+
+            <label class="item item-input modal-setting">
+                <span class="input-label col col-80 scene-modal-input-label">Hue Saturation transition (x100ms)</span>
+				<span class="col col-20">
+					<input type="number" ng-model="deviceData.settings.hueSaturationTransitionTime" pattern="\d+"
+                           min="0" step="1"
+                           class="scene-modal-input">
+				</span>
+            </label>
+
+            <label class="item item-input modal-setting item-select">
+                <span class="input-label col col-80 scene-modal-input-label">Turn off effect (x100ms)</span>
+                <select ng-model="deviceData.settings.turnOffEffect"
+                        ng-options="item for item in ['none', 'delayed-1', 'delayed-2', 'delayed-3', 'dying-1']">
+                </select>
+            </label>
+
+            <label class="item item-input modal-setting">
+                <span class="input-label col col-80 scene-modal-input-label">Delay (x100ms)</span>
+				<span class="col col-20">
+					<input type="number" ng-model="deviceData.delay" pattern="\d+" min="0" step="1"
+                           class="scene-modal-input">
+				</span>
+            </label>
+        </div>
+
+        <div style="padding-top: 60px"></div>
+
+    </ion-content>
+
+    <div class="tabs tabs-modal">
+        <div class="button-bar">
+
+            <a class="button button-full button-assertive" ng-click="deleteDevice()">
+                <i class="ion-ios-minus-outline tab-button-icon"></i>&nbsp;
+                <span>Delete</span>
+            </a>
+            <a class="button button-full button-balanced" ng-click="closeSettingModal()">
+                <i class="ion-ios-checkmark-outline tab-button-icon"></i>&nbsp;
+                <span>Done</span>
+            </a>
+
+        </div>
+    </div>
+</ion-modal-view>

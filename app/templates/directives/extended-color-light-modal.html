@@ -1,0 +1,94 @@
+<ion-modal-view class="ion-modal-view">
+
+    <div class="bar bar-header bar-positive">
+        <h1 class="title"> {{::device.name}} </h1>
+    </div>
+
+    <ion-content padding="true" class="modal-ion-content has-header">
+
+        <!--Selected Color-->
+        <!--<div class="list list-inset" style="margin-top:10px">-->
+        <!--<div style="height:25px;margin:-1px auto; background:hsla({{device.status.hue / 100}}, 100%, 50%, {{device.status.saturation / 100}})"></div>-->
+        <!--</div>-->
+
+        <div id="extended-range2">
+
+            <!--Temp Color-->
+            <div class="list modal-range-padding range-image-height" style="margin-top: 20px">
+                <img src="images/temp-color.jpg">
+            </div>
+            <div class="range" style="margin-top: -48px">
+                <input type="range" ng-model="device.status.colorTemperature" min="2000" max="6500" on-release="save(device)" style="background: transparent">
+            </div>
+
+            <!--Hue Color-->
+            <div class="list modal-range-padding" style="margin-top: 10px">
+                <div style="background-color: #ffffff" class="range-image-height">
+                    <img src="images/hue-color.jpg" style="opacity: {{device.status.saturation/100}}">
+                </div>
+            </div>
+            <div class="range" style="margin-top: -48px">
+                <input type="range" ng-model="device.status.hue" min="1" max="36000" on-release="save(device)" style="background: transparent">
+            </div>
+
+        </div>
+
+        <div id="saturation-range2">
+
+            <!--Saturation-->
+            <div class="modal-range-title" style="padding: 36px 0 2px 0; margin: -25px 0 0 0">
+                Saturation
+            </div>
+            <div class="range range-positive modal-range-padding">
+                <input type="range" ng-model="device.status.saturation" min="1" max="100" on-release="save(device)">
+            </div>
+
+            <!--Brightness-->
+            <div class="modal-range-title" style="padding: 20px 0 2px 0; margin: 0">
+                Brightness
+            </div>
+            <div class="range range-positive modal-range-padding">
+                <input type="range" ng-model="status.brightness" min="1" max="100" on-release="save(device)">
+            </div>
+
+        </div>
+
+        <div class="list" style="margin-top: 10px">
+
+            <!--Color Loop Time-->
+            <div class="flex align-items-center modal-range-padding modal-setting-font">
+                <div class="modal-setting-font-title">Color Loop Time</div>
+                <div class="modal-setting-input">
+                    <input type="number" pattern="\d+" min="0" step="1" ng-model="device.status.colorLoopTime" ng-blur="save(device)">
+                </div>
+            </div>
+
+            <!--Color Loop Status-->
+            <div class="flex align-items-center modal-range-padding modal-setting-font">
+                <div class="modal-setting-font-title">Color Loop</div>
+                <div class="modal-setting-input">
+                    <label class="toggle toggle-positive">
+                        <input type="checkbox" ng-model="device.status.colorLoopActive" ng-change="save(device)">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="padding-top: 60px"></div>
+
+    </ion-content>
+
+    <div class="tabs tabs-modal">
+        <div class="button-bar">
+            <a class="button button-full button-balanced" ng-click="closeColorSettingModal()">
+                <i class="ion-ios-checkmark-outline tab-button-icon"></i>&nbsp;
+                <span>Done</span>
+            </a>
+        </div>
+    </div>
+
+</ion-modal-view>

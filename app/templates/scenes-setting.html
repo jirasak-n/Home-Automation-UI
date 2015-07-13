@@ -1,0 +1,37 @@
+<ion-view view-title="Scenes Management" id="scenes">
+
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon" ui-sref="mainMenu.scenesSetting.createScene()">
+            <i class="ion-ios-plus-empty plus-bar-icon"></i>
+        </button>
+    </ion-nav-buttons>
+
+    <ion-content class="zero-padding">
+
+        <ion-list>
+            <ion-item class="device-item device-onoff-height pointer" ng-repeat="scene in scenes" ui-sref="mainMenu.scenesSetting.editScene({sceneId: scene.$id})">
+                <div class="flex justify-content-center align-items-center device-onoff-height">
+
+                    <!-- ICON -->
+                    <div class="device-icon-position">
+                        <span class="icon-devices-size positive" ng-class="icons[scenesAppData[scene.$id].uiOptions.iconId].icon"></span>
+                    </div>
+
+                    <!-- DESCRIPTION -->
+                    <div class="device-desc-position">
+                        <p class="device-name">{{scene.name}}</p>
+                        <p class="device-desc">{{scene.description}}</p>
+                    </div>
+
+                    <!-- ARROW -->
+                    <div class="arrow-right-position">
+                        <i class="ion-ios-arrow-right "></i>
+                    </div>
+
+                </div>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+
+</ion-view>

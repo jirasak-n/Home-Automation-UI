@@ -1,0 +1,39 @@
+<ion-item class="device-item device-manage-height pointer">
+
+    <!-- NEW DEVICE ICON -->
+    <div class="reachable-new-device-icon" ng-if="device.isNew">
+        <span class="badge badge-energized">New</span>
+    </div>
+
+    <!-- REACHABLE BADGE -->
+    <div class="reachable-icon" ng-if="!device.status._reachable">
+        <span class="badge badge-assertive"><i class="ion-alert"></i></span>
+    </div>
+
+    <!-- NEW DEVICE BG -->
+    <a class="device-manage-arrow-bg device-manage-height new-devices-manage-bg" ng-if="device.isNew"></a>
+
+    <div class="flex justify-content-center align-items-center device-manage-height">
+        <!-- ICON -->
+        <div class="device-icon-position" ui-sref="mainMenu.manageDevices.manageDeviceDetail({deviceId: device.$id})">
+            <span class="icon-devices-size" ng-class="renderClass"></span>
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div class="device-desc-position" ui-sref="mainMenu.manageDevices.manageDeviceDetail({deviceId: device.$id})">
+            <p class="device-name">{{device.name}}</p>
+            <p class="device-desc" style="font-size:11px">{{::device.ieeeAddress}} / {{::device.epId}}</p>
+            <p class="device-desc" style="margin-top:-10px">{{::device.manufacturer}} / {{::device.model}}</p>
+        </div>
+
+        <!-- IDENTIFY BUTTON -->
+        <div class="device-toggle-position">
+            <a class="device-manage-btn-position" ng-click="device.status.identify=!device.status.identify; save(device)" ng-class="{'balanced-bg identifying-btn':device.status.identify}">
+                <span ng-if="!device.status.identify" class="device-manage-iden-btn">Identify</span>
+                <span ng-if="device.status.identify" class="device-manage-identifying-btn">Identifying..</span>
+            </a>
+        </div>
+    </div>
+
+</ion-item>
+
